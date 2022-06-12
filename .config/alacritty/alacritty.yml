@@ -1,0 +1,15 @@
+# original source file at /usr/share/doc/alacritty/example/allacrity.yml
+
+window:
+  padding:
+    x: 10
+    y: 10
+  opacity: 0.9
+  title: Alacritty
+font:
+  size: 14.0
+colors:
+  primary:
+    background: '#1d1f21'
+    foreground: '#c5c8c6'
+
