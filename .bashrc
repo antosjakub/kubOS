@@ -10,7 +10,7 @@ export EDITOR=vim
 
 # alias
 alias clc="clear"
-
+alias qt="bash /home/antos_j/bins/Qt/Tools/QtCreator/bin/qtcreator.sh"
 
 
 
