@@ -2,6 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappx     = 18;       /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -42,6 +43,7 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ "|||",      col },
 };
 
 /* key definitions */
@@ -77,6 +79,7 @@ static Key keys[] = {
 	{ MODKEY,                       -1,         XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       -1,         XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       -1,         XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       -1,         XK_c,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       -1,         XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             -1,         XK_space,  togglefloating, {0} },
 	{ MODKEY,                       -1,         XK_0,      view,           {.ui = ~0 } },

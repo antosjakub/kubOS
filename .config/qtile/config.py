@@ -1,11 +1,15 @@
 # my config in .config/qtile/config.py
 
+
+jmol_version = "jmol-14.32.62"
+
+
 import os
 import subprocess
 from libqtile import hook
 
 from libqtile import bar, layout, widget, extension
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
@@ -48,8 +52,8 @@ keys = [
         # My shortcuts
 
     # Brightness
-    #Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +1%")),
-    #Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 1%-")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +1%")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 1%-")),
 
     # Audio
     #Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
@@ -61,56 +65,45 @@ keys = [
     Key(["mod1"], "z", lazy.spawn("setxkbmap -layout us")),
 
     # Lauch apps 
-    Key([mod], "f", lazy.spawn("firefox")),
-    Key([mod], "c", lazy.spawn("code")),
-    Key([mod], "g", lazy.spawn("google-chrome-stable")),
+    KeyChord([mod], "s", [
+        Key([], "f", lazy.spawn("firefox")),
+        Key([], "c", lazy.spawn("code")),
+        Key([], "g", lazy.spawn("google-chrome-stable")),
+        Key([], "j", lazy.spawn("java -jar /home/antos_j/bins/{}/Jmol.jar".format(jmol_version))),
+    ]),
 
     # Copy text to clipboard
-    Key([mod, "shift"], "p", lazy.spawn("bash /home/antos_j/kubOS/clipboard/psswrd.sh")),
-    Key([mod, "shift"], "t", lazy.spawn("bash /home/antos_j/kubOS/clipboard/token.sh")),
-    Key([mod, "shift"], "b", lazy.spawn("bash /home/antos_j/kubOS/clipboard/bazzinga.sh")),
+    KeyChord([mod], "c", [
+        Key([], "p", lazy.spawn("bash /home/antos_j/kubOS/clipboard/psswrd.sh")),
+        Key([], "t", lazy.spawn("bash /home/antos_j/kubOS/clipboard/token.sh")),
+        Key([], "b", lazy.spawn("bash /home/antos_j/kubOS/clipboard/bazzinga.sh"))
+    ]), 
     
     # dmenu
     Key([mod], "d", lazy.run_extension(extension.Dmenu(dmenu_command="dmenu_run", dmenu_bottom = True))),
 ]
 
 
-# use yuiop - show YUIOP in bar
-groups = [Group(i) for i in "12345"]
-#groups_keys = [Group(i) for i in "uiop"]
-#groups_names = [Group(i) for i in "1234"]
+group_keys = "uiopm"
+group_names = "1234M"
+groups = [Group(i) for i in group_names]
+
+for i in range(0, len(groups)):
+    keys.extend([
+        Key([mod], group_keys[i], lazy.group[group_names[i]].toscreen(), 
+            desc = "Switch focus to group {}".format(group_names[i])),
+        Key([mod, "shift"], group_keys[i], lazy.window.togroup(group_names[i], switch_group = False),
+            desc = "Move window with focus to group {}".format(group_names[i]))
+    ])
 
 
-for i in groups:
-    keys.extend(
-        [
-            # mod1 + letter of group = switch to group
-            Key(
-                [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name),
-            ),
-            # mod1 + shift + letter of group = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
-            ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
-        ]
-    )
 
 layouts = [
     layout.Columns(border_on_single = True, border_focus_stack = ["#d75f5f", "#8f3d3d"], border_width = 2),
     layout.Max(border_width = 5),
     layout.Floating(border_width = 2),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
+    #layout.MonadTall(),
+    #layout.MonadWide(),
 ]
 
 widget_defaults = dict(
@@ -124,14 +117,12 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length = 200),
-                widget.Prompt(prompt = '', cursorblink = 0, fontsize = 15),
                 widget.Spacer(),
                 widget.CurrentScreen(fontsize = 12),
                 widget.CurrentLayoutIcon(scale = 0.65),
                 widget.Sep(padding = 10, linewidth = 1, size_percent = 80, foreground = 'ffffff'),
                 widget.GroupBox(highlight_method='block', rounded = True, this_screen_border = 'cc0000', this_current_screen_border = 'cc0000', fontsize = 14),
-                widget.Spacer(length = 763),
+                widget.Spacer(),
                 widget.Clock(fontsize = 16, format="%H : %M")
             ],
             24,
@@ -144,11 +135,11 @@ screens = [
     ),
 ]
 
-# Drag floating layouts.
-# mouse = [
-#    Drag([mod], "Button2", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-#    Drag([mod], "Button1", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-#    Click([mod], "Button3", lazy.window.bring_to_front()),
+#Drag floating layouts.
+#mouse = [
+    #Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    #Drag([mod], "Button2", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    #Click([mod], "Button3", lazy.window.bring_to_front()),
 #]
 
 dgroups_key_binder = None

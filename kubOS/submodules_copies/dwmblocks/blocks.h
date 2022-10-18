@@ -4,7 +4,7 @@
 // after making changes here do: $ sudo make clean install, and then $ dwmblocks &
 static const Block blocks[] = {
 	/* Icon, Command, Update Interval [s], Update Signal */
-	{"", "date '+%m %B (%a) %H:%M'", 5, 0},
+	{"", "date '+  %m %B (%a) %H:%M'", 5, 0},
 	{"", "echo $(cat /sys/class/power_supply/BAT1/capacity)%", 30, 0},
 	//{"", "acpi | awk '{print $4}'", 30, 0}
 };

@@ -1,8 +1,9 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int gappx     = 10;       /* gap pixel between windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
@@ -43,6 +44,7 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "|||",      col },
 };
 
 
@@ -73,14 +75,15 @@ static Key keys[] = {
 	{ MODKEY,                       -1, XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       -1, XK_l,      setmfact,       {.f = +0.05} },
 
-	{ MODKEY,			-1, XK_i,		incnmaster, 	{.i = +1} },
-	{ MODKEY,			-1, XK_o,		incnmaster, 	{.i = -1} },
+	{ MODKEY,			-1, XK_n,		incnmaster, 	{.i = +1} },
+	{ MODKEY,			-1, XK_m,		incnmaster, 	{.i = -1} },
 	
 	{ MODKEY|ShiftMask,             -1, XK_Return, zoom,           {0} },
 	{ MODKEY,			-1, XK_w,      killclient,     {0} },
 	{ MODKEY,           	-1,XK_u,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,            	-1,XK_i,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,            	-1,XK_o,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,            	-1,XK_p,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       -1, XK_Tab,    setlayout,      {0} },
 	{ MODKEY|ShiftMask,             -1, XK_space,  togglefloating, {0} },
 	{ MODKEY,                       -1, XK_0,      view,           {.ui = ~0 } },
@@ -102,6 +105,7 @@ static Key keys[] = {
 	{ MODKEY,			-1,	XK_f,	spawn,		CMD("firefox") },
 	{ MODKEY,			-1,	XK_g,	spawn,		CMD("google-chrome") },
 	{ MODKEY,			-1,	XK_c,	spawn,		CMD("code") },
+	{ MODKEY,			-1,	XK_j,	spawn,		CMD("java -jar /home/antos_j/bins/jmol-14.32.62/Jmol.jar") },
 
 	{ Mod1Mask,			-1,	XK_y,	spawn,		CMD("setxkbmap -layout cz") },
 	{ Mod1Mask,			-1,	XK_z,	spawn,		CMD("setxkbmap -layout us") },
