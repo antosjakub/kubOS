@@ -1,0 +1,8 @@
+TRUE, LINK
+~/.bashrc
+~/.bash_alises
+~/.config/alacritty/alacritty.yml
+
+
+
+$ ln -s .bashrc ~/.bashrc
