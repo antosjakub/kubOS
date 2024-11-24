@@ -99,7 +99,7 @@ keys = [
     Key([mod], "z", lazy.spawn("setxkbmap -layout cz")),
     Key([mod], "y", lazy.spawn("setxkbmap -layout us")),
 
-    Key([mod], "d", lazy.spawn("bash /home/antos_j/.kubos/dmenu_aliases.sh")),
+    Key([mod], "d", lazy.spawn("bash /home/antos_j/.kubos/run_dmenu.sh")),
     #Key([mod], "d", lazy.run_extension(extension.Dmenu(
     #    dmenu_command="dmenu_run",
     #    fontsize=20,

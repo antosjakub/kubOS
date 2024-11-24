@@ -1,7 +1,7 @@
-alias chrome='google-chrome --force-device-scale-factor=2'
-alias vscode='code --force-device-scale-factor=2'
-alias cursor='~/bin/cursor.AppImage --force-device-scale-factor=2'
-alias files='GDK_SCALE=2 nautilus'
+
+if [ -f ~/.kubos/.bash_aliases_dmenu ]; then
+    . ~/.kubos/.bash_aliases_dmenu
+fi
 
 alias sound='alsamixer'
 alias battery='cat /sys/class/power_supply/BAT1/capacity'
