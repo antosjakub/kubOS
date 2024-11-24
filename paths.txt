@@ -1,8 +1,9 @@
-LINKS
+LINKS THAT POINT HERE
 ~/.bashrc
 ~/.bash_alises
 ~/.config/alacritty/alacritty.yml
-~/.config/qtile/
+~/.config/qtile
+~/.vimrc
 
 
 create a link like so:
