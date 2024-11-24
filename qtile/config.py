@@ -89,9 +89,9 @@ keys = [
 
     # Key chords tryout
     KeyChord([mod], "Escape", [
-        Key([], "b", lazy.spawn("bash /home/antos_j/.kubos/b.sh")),
-        Key([], "l", lazy.spawn("bash /home/antos_j/.kubos/l.sh")),
-        Key([], "g", lazy.spawn("bash /home/antos_j/.kubos/g.sh")),
+        Key([], "b", lazy.spawn("bash /home/antos_j/.kubos/the_hidden_one/b.sh")),
+        Key([], "l", lazy.spawn("bash /home/antos_j/.kubos/the_hidden_one/l.sh")),
+        Key([], "g", lazy.spawn("bash /home/antos_j/.kubos/the_hidden_one/g.sh")),
     ], mode="."),
 
 

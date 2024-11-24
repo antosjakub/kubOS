@@ -1,8 +1,10 @@
-TRUE, LINK
+LINKS
 ~/.bashrc
 ~/.bash_alises
 ~/.config/alacritty/alacritty.yml
+~/.config/qtile/
 
 
-
+create a link like so:
+$ ln -s ground_truth link
 $ ln -s .bashrc ~/.bashrc
