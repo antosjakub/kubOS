@@ -32,6 +32,7 @@ from libqtile.config import ScratchPad, DropDown
 
 mod = "mod4"
 terminal = "alacritty"
+user = "/home/antos_j"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -89,9 +90,9 @@ keys = [
 
     # Key chords tryout
     KeyChord([mod], "Escape", [
-        Key([], "b", lazy.spawn("bash /home/antos_j/.kubos/the_hidden_one/b.sh")),
-        Key([], "l", lazy.spawn("bash /home/antos_j/.kubos/the_hidden_one/l.sh")),
-        Key([], "g", lazy.spawn("bash /home/antos_j/.kubos/the_hidden_one/g.sh")),
+        Key([], "b", lazy.spawn(f"bash {user}/.kubos/clip.sh {user}/.kubos/the_hidden_one/.b")),
+        Key([], "l", lazy.spawn(f"bash {user}/.kubos/clip.sh {user}/.kubos/the_hidden_one/.l")),
+        Key([], "g", lazy.spawn(f"bash {user}/.kubos/clip.sh {user}/.kubos/the_hidden_one/.g")),
     ], mode="."),
 
 
@@ -99,7 +100,7 @@ keys = [
     Key([mod], "z", lazy.spawn("setxkbmap -layout cz")),
     Key([mod], "y", lazy.spawn("setxkbmap -layout us")),
 
-    Key([mod], "d", lazy.spawn("bash /home/antos_j/.kubos/run_dmenu.sh")),
+    Key([mod], "d", lazy.spawn(f"bash {user}/.kubos/run_dmenu.sh")),
     #Key([mod], "d", lazy.run_extension(extension.Dmenu(
     #    dmenu_command="dmenu_run",
     #    fontsize=20,
