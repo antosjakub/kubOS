@@ -132,3 +132,4 @@ unset __conda_setup
 
 # fixing the pygame libGL mesa AMD error
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#export PATH="$PATH:/home/antos_j/.modular/bin"
