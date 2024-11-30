@@ -151,7 +151,7 @@ for i in groups:
 
 
 groups.append(
-    ScratchPad("scratchpad", [DropDown("term", "alacritty", opacity=0.8)])
+    ScratchPad("scratchpad", [DropDown("term", "alacritty", opacity=1.0)])
 )
 keys.append(
     Key([mod], "x", lazy.group['scratchpad'].dropdown_toggle('term')),
