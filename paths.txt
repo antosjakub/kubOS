@@ -8,4 +8,4 @@ LINKS THAT POINT HERE
 
 create a link like so:
 $ ln -s ground_truth link
-$ ln -s .bashrc ~/.bashrc
+$ ln -s ~/.bashrc ~/.bashrc

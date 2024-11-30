@@ -1,5 +1,5 @@
 alias chrome='google-chrome --force-device-scale-factor=2'
 alias vscode='code --force-device-scale-factor=2'
-alias cursor='~/bin/cursor.AppImage --force-device-scale-factor=2'
 alias files='GDK_SCALE=2 nautilus'
-alias jmol='java -jar ~/jmol-16.3.5/Jmol.jar'
+#alias cursor='~/bin/cursor.AppImage --force-device-scale-factor=2'
+#alias jmol='java -jar ~/jmol-16.3.5/Jmol.jar'
