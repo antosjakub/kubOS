@@ -258,4 +258,10 @@ wl_xcursor_size = 24
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
-
+import os
+import subprocess
+from libqtile import hook
+@hook.subscribe.startup_once
+def autostart():
+    script = os.path.expanduser("~/.kubos/qtile/autostart.sh")
+    subprocess.run([script])
