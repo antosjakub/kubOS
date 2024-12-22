@@ -1,0 +1,47 @@
+sudo dnf update
+
+sudo dnf install vim
+
+git clone https://github.com/antosjakub/kubOS.git .kubos
+
+rm -rf Videos/ Templates/ Public/ Pictures/ Music/ Desktop/
+
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+dnf check-update
+sudo dnf install code
+
+sudo dnf install alacritty
+alacritty --version
+
+sudo dnf install qtile
+sudo dnf install python-pywlroots
+qtile start -b wayland
+sudo dnf install wayland wayland-protocols
+ls /usr/share/wayland-sessions/
+cat /usr/share/wayland-sessions/gnome-wayland.desktop 
+sudo vim /usr/share/wayland-sessions/qtile-wayland.desktop
+
+git clone https://git.suckless.org/dmenu
+dmenu_run 
+sudo make install
+patch -p1 < ~/.kubos/dmenu_patches/dmenu-xyw-5.2.diff
+sudo dnf check-update
+sudo dnf upgrade
+sudo dnf install libX11-devel
+sudo dnf install libXinerama-devel
+sudo dnf install libXft-devel
+make
+sudo make clean install
+dmenu_run
+
+rm -rf ~/.config/google-chrome/SingletonLock
+
+sudo dnf install lxappearance
+sudo dnf install brightnessctl
+sudo dnf install wl-clipboard
+
+git config --global user.name "Jakub Antos"
+git config --global user.email "antos_j@outlook.com"
+
+sudo dnf remove ksshaskpass
