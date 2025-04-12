@@ -26,7 +26,6 @@ d) install what u need
 
 e) deactivate the virtual environment
 
-
 requirements.txt
 
 - write installed packages to file:

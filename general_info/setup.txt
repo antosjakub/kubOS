@@ -2,7 +2,7 @@ sudo dnf update
 
 sudo dnf install vim
 
-git clone https://github.com/antosjakub/kubOS.git .kubos
+git clone https://github.com/antosjakub/kubOS.git kubos
 
 rm -rf Videos/ Templates/ Public/ Pictures/ Music/ Desktop/
 
@@ -25,7 +25,7 @@ sudo vim /usr/share/wayland-sessions/qtile-wayland.desktop
 git clone https://git.suckless.org/dmenu
 dmenu_run 
 sudo make install
-patch -p1 < ~/.kubos/dmenu_patches/dmenu-xyw-5.2.diff
+patch -p1 < ~/kubos/dmenu_patches/dmenu-xyw-5.2.diff
 sudo dnf check-update
 sudo dnf upgrade
 sudo dnf install libX11-devel

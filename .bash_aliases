@@ -1,6 +1,6 @@
 
-if [ -f ~/.kubos/.bash_aliases_dmenu ]; then
-    . ~/.kubos/.bash_aliases_dmenu
+if [ -f ~/kubos/.bash_aliases_dmenu ]; then
+    . ~/kubos/.bash_aliases_dmenu
 fi
 
 alias sound='alsamixer'

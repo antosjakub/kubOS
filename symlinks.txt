@@ -1,0 +1,10 @@
+EXTERNAL SYMLINK FILES THAT POINT HERE
+~/.bashrc
+~/.vimrc
+~/.config/alacritty/alacritty.yml
+~/.config/qtile
+
+
+create a symlink like so:
+$ ln -s ground_truth link
+$ ln -s ~/kubos/.bashrc ~/.bashrc

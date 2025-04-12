@@ -90,9 +90,9 @@ keys = [
 
     # Key chords tryout
     KeyChord([mod], "Escape", [
-        Key([], "b", lazy.spawn(f"bash {user}/.kubos/clip.sh {user}/.kubos/the_hidden_one/.b")),
-        Key([], "l", lazy.spawn(f"bash {user}/.kubos/clip.sh {user}/.kubos/the_hidden_one/.l")),
-        Key([], "g", lazy.spawn(f"bash {user}/.kubos/clip.sh {user}/.kubos/the_hidden_one/.g")),
+        Key([], "b", lazy.spawn(f"bash {user}/kubos/clip.sh {user}/kubos/the_hidden_one/.b")),
+        Key([], "l", lazy.spawn(f"bash {user}/kubos/clip.sh {user}/kubos/the_hidden_one/.l")),
+        Key([], "g", lazy.spawn(f"bash {user}/kubos/clip.sh {user}/kubos/the_hidden_one/.g")),
     ], mode="."),
 
 
@@ -100,7 +100,7 @@ keys = [
     Key([mod], "z", lazy.spawn("setxkbmap -layout cz")),
     Key([mod], "y", lazy.spawn("setxkbmap -layout us")),
 
-    Key([mod], "d", lazy.spawn(f"bash {user}/.kubos/run_dmenu.sh")),
+    Key([mod], "d", lazy.spawn(f"bash {user}/kubos/run_dmenu.sh")),
     #Key([mod], "d", lazy.run_extension(extension.Dmenu(
     #    dmenu_command="dmenu_run",
     #    fontsize=20,
@@ -263,5 +263,5 @@ import subprocess
 from libqtile import hook
 @hook.subscribe.startup_once
 def autostart():
-    script = os.path.expanduser("~/.kubos/qtile/autostart.sh")
+    script = os.path.expanduser("~/kubos/qtile/autostart.sh")
     subprocess.run([script])

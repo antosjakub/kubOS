@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source the aliases file
-source ~/.kubos/.bash_aliases_dmenu
+source ~/kubos/.bash_aliases_dmenu
 
 # Define dmenu arguments in a separate variable for readability
 DMENU_ARGS="-nb #000000 -nf #bbbbbb -sb #005577 -sf #eeeeee -fn monospace-18 -y 14"
