@@ -101,12 +101,6 @@ keys = [
     Key([mod], "y", lazy.spawn("setxkbmap -layout us")),
 
     Key([mod], "d", lazy.spawn(f"bash {user}/kubos/run_dmenu.sh")),
-    #Key([mod], "d", lazy.run_extension(extension.Dmenu(
-    #    dmenu_command="dmenu_run",
-    #    fontsize=20,
-    #    background="#000000",
-    #    dmenu_bottom=True,
-    #))),
 ]
 
 # Add key bindings to switch VTs in Wayland.
