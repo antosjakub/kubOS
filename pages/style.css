@@ -1,0 +1,32 @@
+html {
+  color: #c7c7c7;
+  background-color: #1a1a1a;
+}
+body {
+    margin: 0 auto;
+    max-width: 36em;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+}
+
+body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgb(36, 36, 36);
+  border-radius: 3px;
+  font-family: monospace, monospace;
+}
+body code::before,
+body code::after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}

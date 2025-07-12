@@ -45,3 +45,5 @@ git config --global user.name "Jakub Antos"
 git config --global user.email "antos_j@outlook.com"
 
 sudo dnf remove ksshaskpass
+
+sudo dnf install pandoc

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>dev_tricks</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<h2 id="python-environments">python environments</h2>
+<h3 id="venv">venv</h3>
+<ul>
+<li>bundled automatically with python</li>
+</ul>
+<ol type="a">
+<li>cd to your project</li>
+</ol>
+<p><code>cd how_to_not_be_chot/</code></p>
+<ol start="2" type="a">
+<li>create new virtual environment and call it venv</li>
+</ol>
+<p><code>python -m venv venv</code></p>
+<ul>
+<li>this creates a folder called venv</li>
+</ul>
+<ol start="3" type="a">
+<li>activate the virtual environment</li>
+</ol>
+<p><code>source venv/bin/activate</code></p>
+<ul>
+<li>you should see a (venv) now in your terminal promp indicating that
+the environment is active</li>
+</ul>
+<ol start="4" type="a">
+<li>install what u need</li>
+</ol>
+<p><code>pip install pygame</code></p>
+<ol start="5" type="a">
+<li>deactivate the virtual environment</li>
+</ol>
+<p>requirements.txt</p>
+<ul>
+<li>write installed packages to file:</li>
+</ul>
+<p><code>pip freeze &gt; requirements.txt</code></p>
+<ul>
+<li>install from txt</li>
+</ul>
+<p><code>pip install -r requirements.txt</code></p>
+</body>
+</html>
